@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Senhas dos Motoristas | Arena Autovidros</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0b0b1a;
+      color: #f0f0f5;
+      padding: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #ffd700;
+      padding-bottom: 20px;
+    }
+    .logo {
+      font-size: 2.2rem;
+      font-weight: 700;
+      background: linear-gradient(to right, #ffd700, #ffaa00);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin: 0;
+    }
+    .subtitle {
+      color: #a0a0b0;
+      font-size: 1.1rem;
+      margin-top: 8px;
+    }
+    .instructions {
+      background: rgba(20,20,40,0.7);
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 30px;
+      border-left: 4px solid #ffd700;
+    }
+    .instructions h2 {
+      color: #ffd700;
+      margin-top: 0;
+    }
+    .instructions ul {
+      padding-left: 20px;
+    }
+    .instructions li {
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+    .passwords-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: rgba(25,25,45,0.8);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .passwords-table th {
+      background: rgba(255,215,0,0.15);
+      color: #ffd700;
+      text-align: left;
+      padding: 14px 20px;
+      font-weight: 600;
+    }
+    .passwords-table td {
+      padding: 12px 20px;
+      border-bottom: 1px solid rgba(255,215,0,0.08);
+    }
+    .passwords-table tr:last-child td {
+      border-bottom: none;
+    }
+    .password {
+      font-family: 'Courier New', monospace;
+      font-weight: bold;
+      color: #ffd700;
+      background: rgba(0,0,0,0.3);
+      padding: 4px 10px;
+      border-radius: 4px;
+      letter-spacing: 1px;
+    }
+    .btn {
+      background: linear-gradient(45deg, #c5a036, #ffd700);
+      color: #080812;
+      border: none;
+      padding: 14px 28px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 20px;
+      transition: all 0.3s;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(255,215,0,0.4);
+    }
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #777;
+      font-size: 0.9rem;
+    }
+    @media print {
+      .no-print { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1 class="logo">ARENA AUTOVIDROS</h1>
+    <p class="subtitle">Excelência • Compromisso • Foco</p>
+  </div>
+
+  <div class="instructions">
+    <h2><i class="fas fa-file-alt"></i> Instruções de Acesso ao Painel de Desempenho</h2>
+    <p>Prezado(a) colaborador, segue sua credencial de acesso exclusiva ao <strong>Painel de Desempenho Individual</strong>.</p>
+    <ul>
+      <li>🔹 <strong>Usuário:</strong> Sua sigla (ex: <code>ANANIAS</code>) — está listada na tabela abaixo</li>
+      <li>🔹 <strong>Senha:</strong> Código único e confidencial (veja abaixo)</li>
+      <li>🔹 Acesse o sistema em: <code>http://painel.arenaautovidros.local</code> (em dispositivos da frota)</li>
+      <li>🔹 <strong>Não compartilhe sua senha.</strong> Ela é de uso pessoal e intransferível.</li>
+      <li>🔹 Em caso de esquecimento, procure o responsável pela logística.</li>
+    </ul>
+  </div>
+
+  <h2 style="color:#ffd700; margin-bottom:15px;"><i class="fas fa-key"></i> Credenciais Individuais</h2>
+  
+  <table class="passwords-table">
+    <thead>
+      <tr>
+        <th>Motorista</th>
+        <th>Sigla (Usuário)</th>
+        <th>Senha</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>ANANIAS MEDEIROS OLIVEIRA</td><td>ANANIAS</td><td class="password">K7mP9qR2</td></tr>
+      <tr><td>ANDRE SANTANA MENESES</td><td>ANDRE</td><td class="password">Bx4F8vN1</td></tr>
+      <tr><td>ARIEL RODRIGUES DOS SANTOS</td><td>ARIEL</td><td class="password">Tz6H3kM9</td></tr>
+      <tr><td>BRUNO MOREIRA DO AMARANTE</td><td>BRUNO</td><td class="password">Qw2J7cX5</td></tr>
+      <tr><td>DEIVID APARECIDO DE OLIVEIRA LEMOS</td><td>DEIVID</td><td class="password">Ln5V8pD3</td></tr>
+      <tr><td>DENIS MAKI SAITO</td><td>DENIS</td><td class="password">Gm9R4sY6</td></tr>
+      <tr><td>DIOGO GOMES DA SILVA</td><td>DIOGO</td><td class="password">Fk3Z7bW8</td></tr>
+      <tr><td>EDUARDO CAMPOS DA SILVA</td><td>EDUARDO</td><td class="password">Np6T2hU4</td></tr>
+      <tr><td>JHONATA RAMOS DE SANTANA</td><td>JHONATA</td><td class="password">Jd8M5qV1</td></tr>
+      <tr><td>LEANDRO LIMA DA SILVA</td><td>LEANDRO</td><td class="password">Sr4K9wC7</td></tr>
+      <tr><td>RENATO CASSIANO DOS SANTOS</td><td>RENATO</td><td class="password">Yh7B2nP6</td></tr>
+      <tr><td>WILSON ALVES DA SILVA</td><td>WILSON</td><td class="password">Ea5X1gL3</td></tr>
+      <tr><td>ZEINER SARRA FERNANDES</td><td>ZEINER</td><td class="password">Uc6Q8zD9</td></tr>
+    </tbody>
+  </table>
+
+  <div class="no-print" style="text-align:center;">
+    <button id="download-pdf" class="btn">
+      <i class="fas fa-download"></i> Gerar e Baixar PDF Imprimível
+    </button>
+    <p style="color:#a0a0b0; font-size:0.9rem; margin-top:10px;">
+      <i class="fas fa-info-circle"></i> O PDF será salvo como <strong>Arena_Autovidros_Senhas_Motoristas.pdf</strong>
+    </p>
+  </div>
+
+  <div class="footer">
+    <p>Documento confidencial — Distribuição restrita ao corpo de motoristas credenciados.</p>
+    <p>© 2025 Arena Autovidros — Compromisso com a excelência em cada rota.</p>
+  </div>
+
+  <!-- Ícones Font Awesome (inline para evitar falhas offline) -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <script>
+    // Carrega jsPDF do CDN (já incluído no head)
+    const { jsPDF } = window.jspdf;
+
+    document.getElementById('download-pdf').addEventListener('click', () => {
+      const doc = new jsPDF({
+        orientation: 'portrait',
+        unit: 'mm',
+        format: 'a4'
+      });
+
+      // Margens
+      const marginLeft = 20;
+      const top = 20;
+
+      // Cabeçalho
+      doc.setFillColor(11, 11, 26);
+      doc.rect(0, 0, 210, 297, 'F');
+      
+      // Logo Arena Autovidros
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(24);
+      doc.setTextColor(255, 215, 0);
+      doc.text('ARENA AUTOVIDROS', marginLeft, top + 20);
+
+      doc.setFontSize(12);
+      doc.setTextColor(160, 160, 176);
+      doc.text('Excelência • Compromisso • Foco', marginLeft, top + 30);
+
+      // Linha dourada
+      doc.setLineWidth(0.8);
+      doc.setDrawColor(255, 215, 0);
+      doc.line(marginLeft, top + 35, 210 - marginLeft, top + 35);
+
+      // Instruções
+      let yPos = top + 50;
+      doc.setFontSize(16);
+      doc.setTextColor(255, 215, 0);
+      doc.text('Instruções de Acesso ao Painel de Desempenho', marginLeft, yPos);
+      yPos += 10;
+
+      doc.setFontSize(11);
+      doc.setTextColor(240, 240, 245);
+      const instrucoes = [
+        '• Usuário: Sua sigla (ex: ANANIAS)',
+        '• Senha: Código único e confidencial (veja tabela abaixo)',
+        '• Acesse em: http://painel.arenaautovidros.local',
+        '• Não compartilhe sua senha. É de uso pessoal.',
+        '• Em caso de dúvidas, procure o responsável pela logística.'
+      ];
+      instrucoes.forEach(line => {
+        doc.text(line, marginLeft, yPos);
+        yPos += 7;
+      });
+      yPos += 10;
+
+      // Tabela de senhas
+      doc.setFontSize(14);
+      doc.setTextColor(255, 215, 0);
+      doc.text('Credenciais Individuais', marginLeft, yPos);
+      yPos += 12;
+
+      doc.setFontSize(10);
+      doc.setTextColor(240, 240, 245);
+
+      const colWidths = [70, 35, 35]; // Motorista, Sigla, Senha
+      const left = marginLeft;
+      const topTable = yPos;
+
+      // Cabeçalho da tabela
+      doc.setFillColor(30, 30, 50);
+      doc.rect(left, topTable, colWidths[0], 8, 'F');
+      doc.rect(left + colWidths[0], topTable, colWidths[1], 8, 'F');
+      doc.rect(left + colWidths[0] + colWidths[1], topTable, colWidths[2], 8, 'F');
+
+      doc.setTextColor(255, 215, 0);
+      doc.text('Motorista', left + 2, topTable + 5);
+      doc.text('Sigla', left + colWidths[0] + 2, topTable + 5);
+      doc.text('Senha', left + colWidths[0] + colWidths[1] + 2, topTable + 5);
+
+      // Dados
+      const motoristas = [
+        ["ANANIAS MEDEIROS OLIVEIRA", "ANANIAS", "K7mP9qR2"],
+        ["ANDRE SANTANA MENESES", "ANDRE", "Bx4F8vN1"],
+        ["ARIEL RODRIGUES DOS SANTOS", "ARIEL", "Tz6H3kM9"],
+        ["BRUNO MOREIRA DO AMARANTE", "BRUNO", "Qw2J7cX5"],
+        ["DEIVID APARECIDO DE OLIVEIRA LEMOS", "DEIVID", "Ln5V8pD3"],
+        ["DENIS MAKI SAITO", "DENIS", "Gm9R4sY6"],
+        ["DIOGO GOMES DA SILVA", "DIOGO", "Fk3Z7bW8"],
+        ["EDUARDO CAMPOS DA SILVA", "EDUARDO", "Np6T2hU4"],
+        ["JHONATA RAMOS DE SANTANA", "JHONATA", "Jd8M5qV1"],
+        ["LEANDRO LIMA DA SILVA", "LEANDRO", "Sr4K9wC7"],
+        ["RENATO CASSIANO DOS SANTOS", "RENATO", "Yh7B2nP6"],
+        ["WILSON ALVES DA SILVA", "WILSON", "Ea5X1gL3"],
+        ["ZEINER SARRA FERNANDES", "ZEINER", "Uc6Q8zD9"]
+      ];
+
+      let y = topTable + 8;
+      motoristas.forEach(row => {
+        doc.setFillColor(25, 25, 45);
+        doc.rect(left, y, colWidths[0], 6, 'F');
+        doc.rect(left + colWidths[0], y, colWidths[1], 6, 'F');
+        doc.rect(left + colWidths[0] + colWidths[1], y, colWidths[2], 6, 'F');
+
+        doc.setTextColor(240, 240, 245);
+        doc.text(row[0], left + 2, y + 4, { maxWidth: colWidths[0] - 4 });
+        
+        doc.text(row[1], left + colWidths[0] + 2, y + 4);
+        
+        doc.setTextColor(255, 215, 0);
+        doc.text(row[2], left + colWidths[0] + colWidths[1] + 2, y + 4);
+        
+        y += 6;
+      });
+
+      // Rodapé
+      yPos = 275;
+      doc.setFontSize(9);
+      doc.setTextColor(120, 120, 140);
+      doc.text('Documento confidencial — Distribuição restrita ao corpo de motoristas credenciados.', marginLeft, yPos);
+      yPos += 6;
+      doc.text('© 2025 Arena Autovidros — Compromisso com a excelência em cada rota.', marginLeft, yPos);
+
+      // Salvar
+      doc.save('Arena_Autovidros_Senhas_Motoristas.pdf');
+    });
+  </script>
+
+</body>
+</html>
