@@ -37,13 +37,13 @@
 
     header {
       text-align: center;
-      margin-bottom: 30px;
-      padding: 20px;
+      margin-bottom: 20px;
+      padding: 15px;
     }
 
     h1 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 2.2rem;
+      font-size: 2rem;
       margin-bottom: 8px;
       background: linear-gradient(to right, var(--gold), #ffaa00);
       -webkit-background-clip: text;
@@ -56,7 +56,7 @@
       gap: 1px;
       background: rgba(255,215,0,0.1);
       border-radius: 6px;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
       overflow: hidden;
     }
 
@@ -65,11 +65,11 @@
       background: rgba(15,15,35,0.8);
       border: none;
       color: var(--text);
-      padding: 16px;
+      padding: 14px 12px;
       font-family: 'Montserrat', sans-serif;
-      font-size: 1.1rem;
+      font-size: 1rem;
       cursor: pointer;
-      transition: all 0.3s;
+      transition: all 0.25s;
     }
 
     .tab-btn.active, .tab-btn:hover {
@@ -81,7 +81,7 @@
     .tab-content.active { display: block; }
 
     .form-group {
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     label {
@@ -93,12 +93,12 @@
 
     input, select, textarea {
       width: 100%;
-      padding: 12px 16px;
+      padding: 11px 14px;
       background: rgba(20,20,40,0.7);
       border: 1px solid rgba(255,215,0,0.2);
       border-radius: 4px;
       color: white;
-      font-size: 1rem;
+      font-size: 0.95rem;
     }
 
     input:focus, select:focus, textarea:focus {
@@ -111,10 +111,10 @@
       background: linear-gradient(45deg, #c5a036, var(--gold));
       color: var(--bg-darker);
       border: none;
-      padding: 14px 28px;
+      padding: 12px 24px;
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 1rem;
       border-radius: 4px;
       cursor: pointer;
       transition: all 0.3s;
@@ -123,7 +123,7 @@
 
     .btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 15px rgba(255,215,0,0.4);
+      box-shadow: 0 4px 12px rgba(255,215,0,0.4);
     }
 
     .btn-outline {
@@ -138,37 +138,37 @@
 
     .dashboard-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-      margin-bottom: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 25px;
     }
 
     .metric-card {
       background: rgba(20,20,40,0.6);
-      border-radius: 10px;
-      padding: 20px;
+      border-radius: 8px;
+      padding: 18px 14px;
       text-align: center;
-      border-left: 4px solid var(--gold);
-      transition: transform 0.3s;
+      border-left: 3px solid var(--gold);
+      transition: transform 0.25s;
     }
 
     .metric-card:hover {
-      transform: translateY(-3px);
+      transform: translateY(-2px);
     }
 
     .metric-label {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       color: var(--gray);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 6px;
+      gap: 5px;
     }
 
     .metric-value {
       font-family: 'Montserrat', sans-serif;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       font-weight: 700;
     }
 
@@ -179,16 +179,17 @@
 
     .date-display {
       text-align: center;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       margin-bottom: 15px;
       color: var(--gold);
+      font-weight: 600;
     }
 
     .logged-user {
       text-align: center;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       color: var(--gray);
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       font-weight: 600;
     }
 
@@ -207,18 +208,18 @@
     .modal-content {
       background: var(--bg-darker);
       width: 90%;
-      max-width: 600px;
-      border-radius: 12px;
-      padding: 30px;
+      max-width: 580px;
+      border-radius: 10px;
+      padding: 25px;
       border: 1px solid rgba(255,215,0,0.2);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
     }
 
     .loading, .error-msg, .success-msg {
-      font-size: 0.95rem;
-      margin-top: 12px;
-      padding: 8px 12px;
-      border-radius: 6px;
+      font-size: 0.9rem;
+      margin-top: 10px;
+      padding: 7px 12px;
+      border-radius: 5px;
     }
 
     .loading { 
@@ -241,41 +242,44 @@
 
     .motorista-list {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 16px;
-      margin-top: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+      margin: 15px 0;
     }
 
     .motorista-card {
       background: rgba(25,25,45,0.6);
-      border-radius: 8px;
-      padding: 16px;
+      border-radius: 6px;
+      padding: 12px;
       cursor: pointer;
-      transition: all 0.3s;
+      transition: all 0.25s;
       border: 1px solid transparent;
+      font-size: 0.9rem;
     }
 
-    .motorista-card:hover {
+    .motorista-card:hover, .motorista-card.ativo {
       border-color: var(--gold);
-      background: rgba(30,30,50,0.7);
+      background: rgba(35,35,55,0.8);
     }
 
     .motorista-card h3 {
       color: var(--gold);
-      margin-bottom: 8px;
+      margin: 0 0 4px;
+      font-size: 1.1rem;
     }
 
     .motorista-card p {
-      font-size: 0.9rem;
       color: var(--gray);
+      margin: 0;
+      line-height: 1.3;
     }
 
     .history-table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 20px;
+      margin-top: 15px;
       background: rgba(20,20,40,0.4);
-      border-radius: 8px;
+      border-radius: 6px;
       overflow: hidden;
     }
 
@@ -283,12 +287,14 @@
       background: rgba(255,215,0,0.15);
       color: var(--gold);
       text-align: left;
-      padding: 12px 16px;
+      padding: 10px 14px;
+      font-weight: 600;
     }
 
     .history-table td {
-      padding: 12px 16px;
+      padding: 10px 14px;
       border-bottom: 1px solid rgba(255,215,0,0.08);
+      font-size: 0.95rem;
     }
 
     .history-table tr:last-child td {
@@ -296,17 +302,17 @@
     }
 
     .progress-bar {
-      height: 8px;
+      height: 6px;
       background: rgba(255,215,0,0.1);
-      border-radius: 4px;
-      margin-top: 6px;
+      border-radius: 3px;
+      margin-top: 5px;
       overflow: hidden;
     }
 
     .progress-fill {
       height: 100%;
       background: var(--gold);
-      border-radius: 4px;
+      border-radius: 3px;
     }
 
     .badge {
@@ -315,27 +321,29 @@
       border-radius: 12px;
       background: rgba(255,215,0,0.15);
       color: var(--gold);
-      margin-left: 8px;
+      margin-left: 6px;
     }
 
-    .month-selector {
+    .date-selector {
       display: flex;
-      gap: 10px;
+      gap: 8px;
       justify-content: center;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
     }
 
-    .month-btn {
+    .date-btn {
       background: rgba(255,215,0,0.1);
       border: none;
       color: var(--text);
-      padding: 8px 16px;
-      border-radius: 6px;
+      padding: 6px 12px;
+      border-radius: 5px;
       cursor: pointer;
       font-family: 'Lato';
+      font-size: 0.85rem;
     }
 
-    .month-btn.active, .month-btn:hover {
+    .date-btn.active, .date-btn:hover {
       background: var(--gold);
       color: var(--bg-darker);
     }
@@ -347,6 +355,10 @@
       .motorista-list {
         grid-template-columns: 1fr;
       }
+      .tabs .tab-btn {
+        padding: 12px 6px;
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
@@ -355,19 +367,19 @@
   <!-- Modal de Login -->
   <div id="loginModal" class="modal" style="display:flex;">
     <div class="modal-content">
-      <h2 style="color:var(--gold); text-align:center; margin-bottom:25px;">
+      <h2 style="color:var(--gold); text-align:center; margin-bottom:20px;">
         <i class="fas fa-user-tie"></i> Painel de Desempenho<br><small>Arena Autovidros</small>
       </h2>
 
-      <div style="text-align:center; margin-bottom:25px;">
-        <div style="display:inline-block; background:rgba(255,215,0,0.05); padding:12px 24px; border-radius:30px;">
+      <div style="text-align:center; margin-bottom:20px;">
+        <div style="display:inline-block; background:rgba(255,215,0,0.05); padding:10px 20px; border-radius:30px;">
           <span class="badge">Moderador</span>
           <span class="badge">Motorista</span>
         </div>
       </div>
 
-      <div id="login-moderador" style="display:block;">
-        <h3 style="color:var(--gold); margin-bottom:15px;"><i class="fas fa-shield-alt"></i> Acesso do Moderador</h3>
+      <div id="login-moderador">
+        <h3 style="color:var(--gold); margin-bottom:12px;"><i class="fas fa-shield-alt"></i> Acesso do Moderador</h3>
         <div class="form-group">
           <label for="login-user"><i class="fas fa-user"></i> Usuário</label>
           <input type="text" id="login-user" placeholder="ex: admin" autocomplete="off">
@@ -377,13 +389,13 @@
           <input type="password" id="login-pass" placeholder="••••••••">
         </div>
         <button id="login-submit" class="btn" style="width:100%;"><i class="fas fa-sign-in-alt"></i> Entrar como Moderador</button>
-        <p style="text-align:center; margin-top:15px; color:var(--gray);">
+        <p style="text-align:center; margin-top:12px; color:var(--gray);">
           ou <a href="#" id="switch-to-motorista" style="color:var(--gold); text-decoration:underline;">acesse como motorista</a>
         </p>
       </div>
 
       <div id="login-motorista" style="display:none;">
-        <h3 style="color:var(--gold); margin-bottom:15px;"><i class="fas fa-truck"></i> Acesso do Motorista</h3>
+        <h3 style="color:var(--gold); margin-bottom:12px;"><i class="fas fa-truck"></i> Acesso do Motorista</h3>
         <div class="form-group">
           <label for="motorista-user"><i class="fas fa-id-badge"></i> Usuário (Sigla)</label>
           <input type="text" id="motorista-user" placeholder="ex: ANANIAS" maxlength="10" autocomplete="off">
@@ -393,7 +405,7 @@
           <input type="password" id="motorista-pass" placeholder="••••••••" autocomplete="off">
         </div>
         <button id="motorista-submit" class="btn" style="width:100%; background:linear-gradient(45deg, #3b82f6, #60a5fa);"><i class="fas fa-user-check"></i> Acessar Meu Desempenho</button>
-        <p style="text-align:center; margin-top:15px; color:var(--gray);">
+        <p style="text-align:center; margin-top:12px; color:var(--gray);">
           ou <a href="#" id="switch-to-moderador" style="color:var(--gold); text-decoration:underline;">voltar para moderador</a>
         </p>
       </div>
@@ -403,18 +415,19 @@
     </div>
   </div>
 
-  <!-- Modal de Cadastro (só moderador) -->
+  <!-- Modal de Cadastro -->
   <div id="cadastroModal" class="modal">
     <div class="modal-content">
-      <h2 style="color:var(--gold); margin-bottom:20px;"><i class="fas fa-edit"></i> Registrar Desempenho Mensal</h2>
-      <p style="text-align:center; color:var(--gray); margin-bottom:20px;">
-        Motorista: <strong id="cadastro-motorista-nome">—</strong> | Mês: <strong id="cadastro-mes">—</strong>
+      <h2 style="color:var(--gold); margin-bottom:15px;"><i class="fas fa-edit"></i> Registrar Desempenho Diário</h2>
+      <p style="text-align:center; color:var(--gray); margin-bottom:15px;">
+        Motorista: <strong id="cadastro-motorista-nome">—</strong><br>
+        Data: <strong id="cadastro-data">—</strong>
       </p>
 
       <form id="cadastro-form">
         <div class="form-group">
           <label for="taxa-entrega"><i class="fas fa-shipping-fast"></i> Taxa de Entrega (%)</label>
-          <input type="number" id="taxa-entrega" min="0" max="100" step="0.1" placeholder="ex: 98.5" required>
+          <input type="number" id="taxa-entrega" min="0" max="100" step="0.1" placeholder="ex: 100.0">
           <div class="progress-bar">
             <div class="progress-fill" id="taxa-bar" style="width:0%"></div>
           </div>
@@ -422,40 +435,40 @@
 
         <div class="form-group">
           <label for="velocidade"><i class="fas fa-tachometer-alt"></i> Velocidade Média (km/h)</label>
-          <input type="number" id="velocidade" min="0" step="0.1" placeholder="ex: 52.3" required>
+          <input type="number" id="velocidade" min="0" step="0.1" placeholder="ex: 55.2">
         </div>
 
         <div class="form-group">
           <label for="quebras"><i class="fas fa-wind"></i> Quebras de Parabrisas</label>
-          <input type="number" id="quebras" min="0" placeholder="ex: 2" required>
+          <input type="number" id="quebras" min="0" placeholder="ex: 0">
         </div>
 
         <div class="form-group">
-          <label for="valor-quebras"><i class="fas fa-money-bill-wave"></i> Valor Total das Quebras (R$)</label>
-          <input type="number" id="valor-quebras" min="0" step="0.01" placeholder="ex: 640.00" required>
+          <label for="valor-quebras"><i class="fas fa-money-bill-wave"></i> Valor das Quebras (R$)</label>
+          <input type="number" id="valor-quebras" min="0" step="0.01" placeholder="ex: 0.00">
         </div>
 
         <div class="form-group">
-          <label for="devolucoes"><i class="fas fa-undo"></i> Valor Total de Devoluções (R$)</label>
-          <input type="number" id="devolucoes" min="0" step="0.01" placeholder="ex: 320.50" required>
+          <label for="devolucoes"><i class="fas fa-undo"></i> Devoluções (R$)</label>
+          <input type="number" id="devolucoes" min="0" step="0.01" placeholder="ex: 0.00">
         </div>
 
         <div class="form-group">
           <label for="rotas"><i class="fas fa-route"></i> Rotas Realizadas</label>
-          <input type="number" id="rotas" min="0" placeholder="ex: 42" required>
+          <input type="number" id="rotas" min="0" placeholder="ex: 1">
         </div>
 
         <div class="form-group">
           <label for="pernoites"><i class="fas fa-bed"></i> Rotas com Pernoite</label>
-          <input type="number" id="pernoites" min="0" placeholder="ex: 8" required>
+          <input type="number" id="pernoites" min="0" placeholder="ex: 0">
         </div>
 
         <div class="form-group">
           <label for="observacoes"><i class="fas fa-sticky-note"></i> Observações (opcional)</label>
-          <textarea id="observacoes" rows="3" placeholder="Ex: Excelente desempenho na rota Salvador-Recife."></textarea>
+          <textarea id="observacoes" rows="2" placeholder="Ex: Entrega Salvador-Feira sem ocorrências."></textarea>
         </div>
 
-        <button type="submit" class="btn" style="width:100%;"><i class="fas fa-save"></i> Salvar Desempenho</button>
+        <button type="submit" class="btn" style="width:100%;"><i class="fas fa-save"></i> Salvar Registro</button>
       </form>
 
       <p class="loading" id="cadastro-loading">⏳ Salvando...</p>
@@ -474,67 +487,59 @@
       </p>
     </header>
 
+    <!-- Seletor de motoristas (só moderador) -->
+    <div id="motorista-selector" class="motorista-list" style="display:none;"></div>
+
     <div class="tabs">
-      <button class="tab-btn active" data-tab="dashboard">Visão Geral</button>
-      <button class="tab-btn" data-tab="historico">Histórico Mensal</button>
-      <button class="tab-btn" id="btn-cadastro" style="display:none;"><i class="fas fa-plus-circle"></i> Cadastrar Mês</button>
+      <button class="tab-btn active" data-tab="dashboard">Visão Diária</button>
+      <button class="tab-btn" data-tab="diario">Histórico Diário</button>
+      <button class="tab-btn" id="btn-cadastro" style="display:none;"><i class="fas fa-plus-circle"></i> Novo Registro</button>
     </div>
 
     <!-- Dashboard -->
     <div id="dashboard" class="tab-content active">
-      <div class="month-selector" id="month-selector">
-        <!-- Será preenchido por JS -->
-      </div>
+      <div class="date-selector" id="date-selector"></div>
 
       <div class="date-display">
-        <i class="fas fa-calendar-alt"></i> <span id="mes-ano-display">Novembro/2025</span>
+        <i class="fas fa-calendar-day"></i> <span id="data-display">25/11/2025</span>
       </div>
 
-      <div id="dashboard-loading" class="loading" style="text-align:center;">⏳ Carregando desempenho...</div>
+      <div id="dashboard-loading" class="loading" style="text-align:center;">⏳ Carregando...</div>
       <div id="dashboard-error" class="error-msg" style="text-align:center;"></div>
 
-      <div class="dashboard-grid" id="dashboard-metrics">
-        <!-- Preenchido por JS -->
-      </div>
+      <div class="dashboard-grid" id="dashboard-metrics"></div>
 
-      <div style="text-align:center; margin-top:20px;">
-        <button id="btn-editar-mes" class="btn btn-outline" style="display:none;"><i class="fas fa-edit"></i> Editar este Mês</button>
+      <div style="text-align:center; margin-top:15px;">
+        <button id="btn-editar-dia" class="btn btn-outline" style="display:none;"><i class="fas fa-edit"></i> Editar este Dia</button>
       </div>
     </div>
 
-    <!-- Histórico -->
-    <div id="historico" class="tab-content">
-      <h2 style="color:var(--gold); margin-bottom:20px; text-align:center;"><i class="fas fa-history"></i> Histórico de Desempenho</h2>
-      
-      <div id="historico-loading" class="loading" style="text-align:center;">⏳ Carregando histórico...</div>
-      <div id="historico-error" class="error-msg" style="text-align:center;"></div>
-
-      <table class="history-table" id="historico-table">
+    <!-- Histórico Diário -->
+    <div id="diario" class="tab-content">
+      <h2 style="color:var(--gold); margin:15px 0; text-align:center;"><i class="fas fa-list-ul"></i> Registros Diários</h2>
+      <div id="diario-loading" class="loading" style="text-align:center;">⏳ Carregando...</div>
+      <div id="diario-error" class="error-msg" style="text-align:center;"></div>
+      <table class="history-table">
         <thead>
           <tr>
-            <th>Mês/Ano</th>
+            <th>Data</th>
             <th>Taxa Entrega</th>
-            <th>Velocidade</th>
+            <th>Rotas</th>
             <th>Quebras</th>
-            <th>Devoluções</th>
+            <th>Valor Quebras</th>
             <th>Ações</th>
           </tr>
         </thead>
-        <tbody id="historico-body">
-          <!-- Preenchido por JS -->
-        </tbody>
+        <tbody id="diario-body"></tbody>
       </table>
     </div>
   </div>
 
   <script>
-    // ===================================================
-    // 🔐 CREDENCIAIS
-    // ===================================================
+    // 🔐 Credenciais
     const MODERADOR_USER = 'admin';
-    const MODERADOR_PASS = 'arena2025'; // senha real (não mais hash, para facilitar)
+    const MODERADOR_PASS = 'arena2025';
 
-    // Senhas dos motoristas (geradas com segurança)
     const SENHAS_MOTORISTAS = {
       "ANANIAS": "K7mP9qR2",
       "ANDRE": "Bx4F8vN1",
@@ -551,7 +556,6 @@
       "ZEINER": "Uc6Q8zD9"
     };
 
-    // Nomes completos para exibição
     const NOMES_COMPLETOS = {
       "ANANIAS": "ANANIAS MEDEIROS OLIVEIRA",
       "ANDRE": "ANDRE SANTANA MENESES",
@@ -568,93 +572,101 @@
       "ZEINER": "ZEINER SARRA FERNANDES"
     };
 
-    // Meses disponíveis
-    const MESES = [
-      { value: '2025-11', label: 'Nov/2025' },
-      { value: '2025-10', label: 'Out/2025' },
-      { value: '2025-09', label: 'Set/2025' },
-      { value: '2025-08', label: 'Ago/2025' },
-      { value: '2025-07', label: 'Jul/2025' }
-    ];
-
+    const SIGLAS_MOTORISTAS = Object.keys(NOMES_COMPLETOS);
     let usuarioLogado = null;
-    let perfil = null; // 'moderador' ou 'motorista'
-    let mesAtivo = '2025-11';
+    let perfil = null;
+    let motoristaSelecionado = 'ANANIAS';
+    let dataAtiva = '';
 
-    // ===================================================
-    // 💾 PERSISTÊNCIA
-    // ===================================================
+    // Gera últimas 30 datas (YYYY-MM-DD)
+    function gerarDatasRecentes(dias = 30) {
+      const hoje = new Date();
+      const datas = [];
+      for (let i = 0; i < dias; i++) {
+        const data = new Date();
+        data.setDate(hoje.getDate() - i);
+        const y = data.getFullYear();
+        const m = String(data.getMonth() + 1).padStart(2, '0');
+        const d = String(data.getDate()).padStart(2, '0');
+        const value = `${y}-${m}-${d}`;
+        const label = `${d}/${m}`;
+        datas.push({ value, label });
+      }
+      return datas;
+    }
+
+    let DATAS_DISPONIVEIS = gerarDatasRecentes(30);
+    dataAtiva = DATAS_DISPONIVEIS[0].value; // hoje
+
+    // 💾 Persistência
     function salvarDados() {
-      localStorage.setItem('arena_desempenho_v2', JSON.stringify(dadosDesempenho));
+      localStorage.setItem('arena_desempenho_v3_diario', JSON.stringify(dadosDesempenho));
     }
 
     function carregarDados() {
-      const salvos = localStorage.getItem('arena_desempenho_v2');
-      if (salvos) {
-        return JSON.parse(salvos);
-      }
-      // Dados iniciais (exemplo)
-      return {
-        "ANANIAS": {
-          "2025-11": {
-            taxa_entrega: 98.5,
-            velocidade: 52.3,
-            quebras: 1,
-            valor_quebras: 320.50,
-            devolucoes: 0,
-            rotas: 42,
-            pernoites: 8,
-            observacoes: "Excelente desempenho. Nenhuma reclamação.",
-            data_registro: new Date().toISOString()
-          }
-        }
-      };
+      const salvos = localStorage.getItem('arena_desempenho_v3_diario');
+      return salvos ? JSON.parse(salvos) : {};
     }
 
     let dadosDesempenho = carregarDados();
 
-    // ===================================================
-    // 🧮 UTILITÁRIOS
-    // ===================================================
+    // 🧮 Utilitários
     function formatarMoeda(valor) {
-      return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valor);
+      return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', minimumFractionDigits: 2 }).format(valor);
     }
 
-    function formatarMesAno(mesAno) {
-      const [ano, mes] = mesAno.split('-');
-      const nomes = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
-      return `${nomes[parseInt(mes)-1]}/${ano}`;
-    }
-
-    // ===================================================
-    // 🎨 RENDERIZAÇÃO
-    // ===================================================
+    // 🎨 Renderização
     function atualizarBadgePerfil() {
       const badge = document.getElementById('role-badge');
+      const userDisplay = document.getElementById('user-display');
+
       if (perfil === 'moderador') {
         badge.textContent = 'Moderador';
         badge.style.background = 'rgba(74, 222, 128, 0.2)';
         badge.style.color = '#4ade80';
+        userDisplay.textContent = `Moderador • ${NOMES_COMPLETOS[motoristaSelecionado] || motoristaSelecionado}`;
       } else if (perfil === 'motorista') {
         badge.textContent = 'Motorista';
         badge.style.background = 'rgba(255, 215, 0, 0.2)';
         badge.style.color = 'var(--gold)';
+        userDisplay.textContent = NOMES_COMPLETOS[usuarioLogado] || usuarioLogado;
       }
     }
 
-    function renderizarSelectorMes() {
-      const container = document.getElementById('month-selector');
-      container.innerHTML = MESES.map(m => 
-        `<button class="month-btn ${m.value === mesAtivo ? 'active' : ''}" 
-                data-mes="${m.value}">${m.label}</button>`
+    function renderizarSelectorData() {
+      const container = document.getElementById('date-selector');
+      container.innerHTML = DATAS_DISPONIVEIS.map(d => 
+        `<button class="date-btn ${d.value === dataAtiva ? 'active' : ''}" data-data="${d.value}">${d.label}</button>`
       ).join('');
 
-      container.querySelectorAll('.month-btn').forEach(btn => {
+      container.querySelectorAll('.date-btn').forEach(btn => {
         btn.addEventListener('click', () => {
-          document.querySelectorAll('.month-btn').forEach(b => b.classList.remove('active'));
+          document.querySelectorAll('.date-btn').forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
-          mesAtivo = btn.dataset.mes;
+          dataAtiva = btn.dataset.data;
           if (usuarioLogado) carregarDashboard();
+        });
+      });
+    }
+
+    function renderizarSelectorMotoristas() {
+      if (perfil !== 'moderador') return;
+      const container = document.getElementById('motorista-selector');
+      container.style.display = 'grid';
+      container.innerHTML = SIGLAS_MOTORISTAS.map(sigla => 
+        `<div class="motorista-card ${sigla === motoristaSelecionado ? 'ativo' : ''}" data-motorista="${sigla}">
+          <h3>${sigla}</h3>
+          <p>${NOMES_COMPLETOS[sigla]}</p>
+        </div>`
+      ).join('');
+
+      container.querySelectorAll('.motorista-card').forEach(card => {
+        card.addEventListener('click', () => {
+          document.querySelectorAll('.motorista-card').forEach(c => c.classList.remove('ativo'));
+          card.classList.add('ativo');
+          motoristaSelecionado = card.dataset.motorista;
+          atualizarBadgePerfil();
+          carregarDashboard();
         });
       });
     }
@@ -666,34 +678,31 @@
           <div class="metric-label"><i class="fas fa-shipping-fast"></i> Taxa de Entrega</div>
           <div class="metric-value percent">${dados.taxa_entrega.toFixed(1)}%</div>
           <div class="progress-bar">
-            <div class="progress-fill" style="width:${Math.min(dados.taxa_entrega, 100)}%"></div>
+            <div class="progress-fill" style="width:${Math.min(100, dados.taxa_entrega)}%"></div>
           </div>
         </div>
         <div class="metric-card">
-          <div class="metric-label"><i class="fas fa-tachometer-alt"></i> Velocidade Média</div>
-          <div class="metric-value speed">${dados.velocidade.toFixed(1)} <small>km/h</small></div>
+          <div class="metric-label"><i class="fas fa-route"></i> Rotas Realizadas</div>
+          <div class="metric-value">${dados.rotas || 0}</div>
         </div>
         <div class="metric-card">
-          <div class="metric-label"><i class="fas fa-wind"></i> Quebras de Parabrisas</div>
-          <div class="metric-value break">${dados.quebras}</div>
-          <div style="font-size:0.9rem; color:var(--gray); margin-top:6px;">
-            ${formatarMoeda(dados.valor_quebras)}
+          <div class="metric-label"><i class="fas fa-bed"></i> com Pernoite</div>
+          <div class="metric-value">${dados.pernoites || 0}</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label"><i class="fas fa-tachometer-alt"></i> Velocidade Média</div>
+          <div class="metric-value speed">${dados.velocidade ? dados.velocidade.toFixed(1) : '—'} km/h</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label"><i class="fas fa-wind"></i> Quebras</div>
+          <div class="metric-value break">${dados.quebras || 0}</div>
+          <div style="font-size:0.85rem; color:var(--gray); margin-top:4px;">
+            ${dados.valor_quebras ? formatarMoeda(dados.valor_quebras) : 'R$ 0,00'}
           </div>
         </div>
         <div class="metric-card">
           <div class="metric-label"><i class="fas fa-undo"></i> Devoluções</div>
-          <div class="metric-value money">${formatarMoeda(dados.devolucoes)}</div>
-        </div>
-        <div class="metric-card">
-          <div class="metric-label"><i class="fas fa-route"></i> Rotas Realizadas</div>
-          <div class="metric-value">${dados.rotas}</div>
-        </div>
-        <div class="metric-card">
-          <div class="metric-label"><i class="fas fa-bed"></i> Rotas com Pernoite</div>
-          <div class="metric-value">${dados.pernoites}</div>
-          <div style="font-size:0.9rem; color:var(--gray); margin-top:6px;">
-            ${dados.rotas ? ((dados.pernoites / dados.rotas) * 100).toFixed(0) : '0'}% das rotas
-          </div>
+          <div class="metric-value money">${dados.devolucoes ? formatarMoeda(dados.devolucoes) : 'R$ 0,00'}</div>
         </div>
       `;
     }
@@ -702,159 +711,139 @@
       const loading = document.getElementById('dashboard-loading');
       const error = document.getElementById('dashboard-error');
       const metrics = document.getElementById('dashboard-metrics');
-      const btnEditar = document.getElementById('btn-editar-mes');
+      const btnEditar = document.getElementById('btn-editar-dia');
 
       loading.style.display = 'block';
       error.style.display = 'none';
+      metrics.innerHTML = '';
       metrics.style.display = 'none';
       btnEditar.style.display = 'none';
 
       try {
-        let dados = null;
-        let nomeExibicao = usuarioLogado;
+        const alvo = perfil === 'moderador' ? motoristaSelecionado : usuarioLogado;
+        const dados = (dadosDesempenho[alvo] && dadosDesempenho[alvo][dataAtiva]) || null;
 
-        if (perfil === 'moderador') {
-          const motorista = document.getElementById('cadastro-motorista-nome')?.dataset?.motorista || 'ANANIAS';
-          nomeExibicao = NOMES_COMPLETOS[motorista] || motorista;
-          dados = dadosDesempenho[motorista]?.[mesAtivo] || null;
-        } else {
-          nomeExibicao = NOMES_COMPLETOS[usuarioLogado] || usuarioLogado;
-          dados = dadosDesempenho[usuarioLogado]?.[mesAtivo] || null;
-        }
-
-        document.getElementById('user-display').textContent = nomeExibicao;
-        document.getElementById('mes-ano-display').textContent = formatarMesAno(mesAtivo);
+        document.getElementById('data-display').textContent = dataAtiva.split('-').reverse().join('/');
 
         if (dados) {
           renderizarDashboard(dados);
           metrics.style.display = 'grid';
-          if (perfil === 'moderador') {
+          if (perfil === 'moderador' || (perfil === 'motorista' && dados)) {
             btnEditar.style.display = 'inline-block';
           }
         } else {
           metrics.innerHTML = `
-            <div class="metric-card" style="grid-column: 1 / -1; background:rgba(30,30,50,0.7);">
-              <div style="font-size:1.3rem; color:var(--gray); margin-bottom:15px;">
-                <i class="fas fa-exclamation-circle"></i> Nenhum dado cadastrado para ${formatarMesAno(mesAtivo)}
+            <div class="metric-card" style="grid-column:1/-1; background:rgba(30,30,50,0.7);">
+              <div style="font-size:1.2rem; color:var(--gray); margin-bottom:12px;">
+                <i class="fas fa-calendar-plus"></i> Sem registro em ${dataAtiva.split('-').reverse().join('/')}
               </div>
-              ${perfil === 'moderador' ? 
-                `<button class="btn" onclick="abrirCadastro('${usuarioLogado || 'ANANIAS'}', '${mesAtivo}')">
-                  <i class="fas fa-plus"></i> Cadastrar Agora
-                </button>` : 
-                `<p style="color:var(--gray);">Aguarde o moderador inserir seus dados.</p>`
-              }
+              <button class="btn" onclick="abrirCadastro('${alvo}', '${dataAtiva}')">
+                <i class="fas fa-plus"></i> Cadastrar Agora
+              </button>
             </div>
           `;
           metrics.style.display = 'grid';
         }
-      } catch (err) {
+      } catch (e) {
         error.textContent = 'Erro ao carregar dados.';
         error.style.display = 'block';
-        console.error(err);
+        console.error(e);
       } finally {
         loading.style.display = 'none';
       }
     }
 
-    function carregarHistorico() {
-      const loading = document.getElementById('historico-loading');
-      const error = document.getElementById('historico-error');
-      const body = document.getElementById('historico-body');
+    function carregarDiario() {
+      const loading = document.getElementById('diario-loading');
+      const error = document.getElementById('diario-error');
+      const body = document.getElementById('diario-body');
 
       loading.style.display = 'block';
       error.style.display = 'none';
       body.innerHTML = '';
 
       try {
-        const dadosMotorista = dadosDesempenho[usuarioLogado] || {};
-        const mesesComDados = Object.keys(dadosMotorista)
-          .map(mes => ({ mes, ...dadosMotorista[mes] }))
-          .sort((a, b) => b.mes.localeCompare(a.mes)); // mais recente primeiro
+        const alvo = perfil === 'moderador' ? motoristaSelecionado : usuarioLogado;
+        const dados = dadosDesempenho[alvo] || {};
 
-        if (mesesComDados.length === 0) {
-          body.innerHTML = `
-            <tr>
-              <td colspan="6" style="text-align:center; color:var(--gray);">
-                Nenhum registro encontrado.
-              </td>
-            </tr>
-          `;
+        const entradas = Object.entries(dados)
+          .map(([data, info]) => ({ data, ...info }))
+          .sort((a, b) => b.data.localeCompare(a.data));
+
+        if (entradas.length === 0) {
+          body.innerHTML = `<tr><td colspan="6" style="text-align:center;color:var(--gray)">Nenhum registro diário.</td></tr>`;
         } else {
-          body.innerHTML = mesesComDados.map(item => `
+          body.innerHTML = entradas.map(item => `
             <tr>
-              <td><strong>${formatarMesAno(item.mes)}</strong></td>
-              <td class="percent">${item.taxa_entrega.toFixed(1)}%</td>
-              <td>${item.velocidade.toFixed(1)} km/h</td>
-              <td class="break">${item.quebras} (${formatarMoeda(item.valor_quebras)})</td>
-              <td class="money">${formatarMoeda(item.devolucoes)}</td>
+              <td><strong>${item.data.split('-').reverse().join('/')}</strong></td>
+              <td>${item.taxa_entrega ? item.taxa_entrega.toFixed(1) : '—'}%</td>
+              <td>${item.rotas || 0}</td>
+              <td>${item.quebras || 0}</td>
+              <td>${item.valor_quebras ? formatarMoeda(item.valor_quebras) : 'R$ 0,00'}</td>
               <td>
-                ${perfil === 'moderador' ? 
-                  `<button class="btn btn-outline" style="padding:6px 10px; font-size:0.85rem;" 
-                          onclick="abrirCadastro('${usuarioLogado}', '${item.mes}')">
-                     <i class="fas fa-edit"></i> Editar
-                   </button>` : 
-                  `<span style="color:var(--gray);">—</span>`
-                }
+                <button class="btn btn-outline" style="padding:5px 10px;font-size:0.8rem;"
+                        onclick="abrirCadastro('${alvo}', '${item.data}')">
+                  <i class="fas fa-edit"></i> Editar
+                </button>
               </td>
             </tr>
           `).join('');
         }
-      } catch (err) {
+      } catch (e) {
         error.textContent = 'Erro ao carregar histórico.';
         error.style.display = 'block';
-        console.error(err);
+        console.error(e);
       } finally {
         loading.style.display = 'none';
       }
     }
 
-    function abrirCadastro(motorista, mes) {
+    function abrirCadastro(motorista, data) {
       const modal = document.getElementById('cadastroModal');
-      const nomeCompleto = NOMES_COMPLETOS[motorista] || motorista;
+      const nome = NOMES_COMPLETOS[motorista] || motorista;
       
-      document.getElementById('cadastro-motorista-nome').textContent = nomeCompleto;
+      document.getElementById('cadastro-motorista-nome').textContent = nome;
       document.getElementById('cadastro-motorista-nome').dataset.motorista = motorista;
-      document.getElementById('cadastro-mes').textContent = formatarMesAno(mes);
-      document.getElementById('cadastro-mes').dataset.mes = mes;
+      document.getElementById('cadastro-data').textContent = data.split('-').reverse().join('/');
+      document.getElementById('cadastro-data').dataset.data = data;
 
-      // Preenche formulário se já houver dados
-      const dados = dadosDesempenho[motorista]?.[mes];
+      const dados = dadosDesempenho[motorista]?.[data];
+      const form = document.getElementById('cadastro-form');
       if (dados) {
-        document.getElementById('taxa-entrega').value = dados.taxa_entrega;
-        document.getElementById('velocidade').value = dados.velocidade;
-        document.getElementById('quebras').value = dados.quebras;
-        document.getElementById('valor-quebras').value = dados.valor_quebras;
-        document.getElementById('devolucoes').value = dados.devolucoes;
-        document.getElementById('rotas').value = dados.rotas;
-        document.getElementById('pernoites').value = dados.pernoites;
+        document.getElementById('taxa-entrega').value = dados.taxa_entrega || '';
+        document.getElementById('velocidade').value = dados.velocidade || '';
+        document.getElementById('quebras').value = dados.quebras || 0;
+        document.getElementById('valor-quebras').value = dados.valor_quebras || 0;
+        document.getElementById('devolucoes').value = dados.devolucoes || 0;
+        document.getElementById('rotas').value = dados.rotas || 0;
+        document.getElementById('pernoites').value = dados.pernoites || 0;
         document.getElementById('observacoes').value = dados.observacoes || '';
       } else {
-        document.getElementById('cadastro-form').reset();
+        form.reset();
       }
 
-      // Atualiza barra de progresso
       const inputTaxa = document.getElementById('taxa-entrega');
       const bar = document.getElementById('taxa-bar');
-      inputTaxa.addEventListener('input', () => {
+      const updateBar = () => {
         const val = Math.min(100, Math.max(0, parseFloat(inputTaxa.value) || 0));
         bar.style.width = val + '%';
-      });
-      if (dados) bar.style.width = dados.taxa_entrega + '%';
+      };
+      inputTaxa.addEventListener('input', updateBar);
+      if (dados && dados.taxa_entrega) bar.style.width = dados.taxa_entrega + '%';
+      else bar.style.width = '0%';
 
       modal.style.display = 'flex';
     }
 
-    // ===================================================
-    // 🚪 LOGIN
-    // ===================================================
-    document.getElementById('switch-to-motorista').addEventListener('click', (e) => {
+    // 🚪 Login
+    document.getElementById('switch-to-motorista').addEventListener('click', e => {
       e.preventDefault();
       document.getElementById('login-moderador').style.display = 'none';
       document.getElementById('login-motorista').style.display = 'block';
       document.getElementById('login-error').style.display = 'none';
     });
 
-    document.getElementById('switch-to-moderador').addEventListener('click', (e) => {
+    document.getElementById('switch-to-moderador').addEventListener('click', e => {
       e.preventDefault();
       document.getElementById('login-motorista').style.display = 'none';
       document.getElementById('login-moderador').style.display = 'block';
@@ -864,9 +853,8 @@
     document.getElementById('login-submit').addEventListener('click', () => {
       const user = document.getElementById('login-user').value.trim();
       const pass = document.getElementById('login-pass').value;
-
-      const loading = document.getElementById('login-loading');
       const error = document.getElementById('login-error');
+      const loading = document.getElementById('login-loading');
 
       if (!user || !pass) {
         error.textContent = 'Preencha usuário e senha.';
@@ -883,23 +871,22 @@
           perfil = 'moderador';
           document.getElementById('loginModal').style.display = 'none';
           document.getElementById('main-content').style.display = 'block';
-          atualizarBadgePerfil();
           document.getElementById('btn-cadastro').style.display = 'block';
-          document.getElementById('cadastro-motorista-nome').dataset.motorista = 'ANANIAS';
-          renderizarSelectorMes();
+          atualizarBadgePerfil();
+          renderizarSelectorMotoristas();
+          renderizarSelectorData();
           carregarDashboard();
         } else {
           error.textContent = 'Usuário ou senha incorretos.';
           error.style.display = 'block';
         }
         loading.style.display = 'none';
-      }, 400);
+      }, 300);
     });
 
     document.getElementById('motorista-submit').addEventListener('click', () => {
       const user = document.getElementById('motorista-user').value.trim().toUpperCase();
       const pass = document.getElementById('motorista-pass').value;
-
       const error = document.getElementById('login-error');
 
       if (!user || !pass) {
@@ -914,7 +901,7 @@
         document.getElementById('loginModal').style.display = 'none';
         document.getElementById('main-content').style.display = 'block';
         atualizarBadgePerfil();
-        renderizarSelectorMes();
+        renderizarSelectorData();
         carregarDashboard();
       } else {
         error.textContent = 'Usuário ou senha inválidos.';
@@ -922,93 +909,75 @@
       }
     });
 
-    // ===================================================
-    // 📝 CADASTRO
-    // ===================================================
-    document.getElementById('cadastro-form').addEventListener('submit', (e) => {
+    // 📝 Cadastro
+    document.getElementById('cadastro-form').addEventListener('submit', e => {
       e.preventDefault();
 
       const motorista = document.getElementById('cadastro-motorista-nome').dataset.motorista;
-      const mes = document.getElementById('cadastro-mes').dataset.mes;
+      const data = document.getElementById('cadastro-data').dataset.data;
 
       const campos = {
-        taxa_entrega: parseFloat(document.getElementById('taxa-entrega').value),
-        velocidade: parseFloat(document.getElementById('velocidade').value),
-        quebras: parseInt(document.getElementById('quebras').value),
-        valor_quebras: parseFloat(document.getElementById('valor-quebras').value),
-        devolucoes: parseFloat(document.getElementById('devolucoes').value),
-        rotas: parseInt(document.getElementById('rotas').value),
-        pernoites: parseInt(document.getElementById('pernoites').value),
-        observacoes: document.getElementById('observacoes').value.trim()
+        taxa_entrega: parseFloat(document.getElementById('taxa-entrega').value) || 0,
+        velocidade: parseFloat(document.getElementById('velocidade').value) || 0,
+        quebras: parseInt(document.getElementById('quebras').value) || 0,
+        valor_quebras: parseFloat(document.getElementById('valor-quebras').value) || 0,
+        devolucoes: parseFloat(document.getElementById('devolucoes').value) || 0,
+        rotas: parseInt(document.getElementById('rotas').value) || 0,
+        pernoites: parseInt(document.getElementById('pernoites').value) || 0,
+        observacoes: document.getElementById('observacoes').value.trim() || ''
       };
 
-      // Validação
-      if (isNaN(campos.taxa_entrega) || campos.taxa_entrega < 0 || campos.taxa_entrega > 100) {
+      if (campos.taxa_entrega < 0 || campos.taxa_entrega > 100) {
         document.getElementById('cadastro-error').textContent = 'Taxa de entrega deve estar entre 0 e 100.';
         document.getElementById('cadastro-error').style.display = 'block';
         return;
       }
 
-      // Garante inicialização
       if (!dadosDesempenho[motorista]) dadosDesempenho[motorista] = {};
-      dadosDesempenho[motorista][mes] = {
+      dadosDesempenho[motorista][data] = {
         ...campos,
         data_registro: new Date().toISOString()
       };
 
       salvarDados();
 
-      document.getElementById('cadastro-success').textContent = '✅ Desempenho salvo com sucesso!';
+      document.getElementById('cadastro-success').textContent = '✅ Registro salvo com sucesso!';
       document.getElementById('cadastro-success').style.display = 'block';
       document.getElementById('cadastro-error').style.display = 'none';
 
       setTimeout(() => {
         document.getElementById('cadastroModal').style.display = 'none';
-        if (perfil === 'moderador') {
-          document.getElementById('cadastro-motorista-nome').dataset.motorista = motorista;
-        }
         carregarDashboard();
-        carregarHistorico();
-      }, 1200);
+        if (document.getElementById('diario').classList.contains('active')) carregarDiario();
+      }, 1000);
     });
 
-    // ===================================================
-    // 🔁 NAVEGAÇÃO
-    // ===================================================
+    // 🔁 Navegação
     document.querySelectorAll('.tab-btn:not(#btn-cadastro)').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
         document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-        
-        const tabId = btn.dataset.tab;
         btn.classList.add('active');
+        const tabId = btn.dataset.tab;
         document.getElementById(tabId).classList.add('active');
-
-        if (tabId === 'historico' && usuarioLogado) {
-          carregarHistorico();
-        }
+        if (tabId === 'diario' && usuarioLogado) carregarDiario();
       });
     });
 
-    document.getElementById('btn-editar-mes').addEventListener('click', () => {
-      const motorista = perfil === 'moderador' 
-        ? (document.getElementById('cadastro-motorista-nome')?.dataset?.motorista || 'ANANIAS')
-        : usuarioLogado;
-      abrirCadastro(motorista, mesAtivo);
+    document.getElementById('btn-editar-dia').addEventListener('click', () => {
+      const alvo = perfil === 'moderador' ? motoristaSelecionado : usuarioLogado;
+      abrirCadastro(alvo, dataAtiva);
     });
 
     document.getElementById('btn-cadastro').addEventListener('click', () => {
-      const motorista = document.getElementById('cadastro-motorista-nome')?.dataset?.motorista || 'ANANIAS';
-      abrirCadastro(motorista, mesAtivo);
+      const alvo = perfil === 'moderador' ? motoristaSelecionado : usuarioLogado;
+      abrirCadastro(alvo, dataAtiva);
     });
 
     // Fecha modais ao clicar fora
-    window.addEventListener('click', (e) => {
-      if (e.target.classList.contains('modal')) {
-        e.target.style.display = 'none';
-      }
+    window.addEventListener('click', e => {
+      if (e.target.classList.contains('modal')) e.target.style.display = 'none';
     });
   </script>
-
 </body>
 </html>
