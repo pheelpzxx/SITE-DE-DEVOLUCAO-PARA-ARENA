@@ -578,25 +578,43 @@
     let motoristaSelecionado = 'ANANIAS';
     let dataAtiva = '';
 
-    // Gera últimas 30 datas (YYYY-MM-DD)
-    function gerarDatasRecentes(dias = 30) {
+    // ✅ Nova função: janela de 31 dias (15 atrás + hoje + 15 à frente)
+    function gerarJanelaDatas() {
       const hoje = new Date();
       const datas = [];
-      for (let i = 0; i < dias; i++) {
+
+      // 15 dias para trás
+      for (let i = 15; i >= 1; i--) {
         const data = new Date();
         data.setDate(hoje.getDate() - i);
         const y = data.getFullYear();
         const m = String(data.getMonth() + 1).padStart(2, '0');
         const d = String(data.getDate()).padStart(2, '0');
-        const value = `${y}-${m}-${d}`;
-        const label = `${d}/${m}`;
-        datas.push({ value, label });
+        datas.push({ value: `${y}-${m}-${d}`, label: `${d}/${m}` });
       }
+
+      // Hoje
+      const y0 = hoje.getFullYear();
+      const m0 = String(hoje.getMonth() + 1).padStart(2, '0');
+      const d0 = String(hoje.getDate()).padStart(2, '0');
+      datas.push({ value: `${y0}-${m0}-${d0}`, label: `${d0}/${m0}` });
+
+      // 15 dias à frente
+      for (let i = 1; i <= 15; i++) {
+        const data = new Date();
+        data.setDate(hoje.getDate() + i);
+        const y = data.getFullYear();
+        const m = String(data.getMonth() + 1).padStart(2, '0');
+        const d = String(data.getDate()).padStart(2, '0');
+        datas.push({ value: `${y}-${m}-${d}`, label: `${d}/${m}` });
+      }
+
       return datas;
     }
 
-    let DATAS_DISPONIVEIS = gerarDatasRecentes(30);
-    dataAtiva = DATAS_DISPONIVEIS[0].value; // hoje
+    // ✅ Atualiza DATAS_DISPONIVEIS dinamicamente
+    let DATAS_DISPONIVEIS = gerarJanelaDatas();
+    dataAtiva = DATAS_DISPONIVEIS[15].value; // índice 15 = hoje
 
     // 💾 Persistência
     function salvarDados() {
