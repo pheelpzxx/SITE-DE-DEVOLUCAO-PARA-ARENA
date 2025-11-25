@@ -649,6 +649,9 @@
         badge.style.color = 'var(--gold)';
         userDisplay.textContent = NOMES_COMPLETOS[usuarioLogado] || usuarioLogado;
       }
+
+      // ✅ Só moderador vê botão de cadastro
+      document.getElementById('btn-cadastro').style.display = (perfil === 'moderador') ? 'block' : 'none';
     }
 
     function renderizarSelectorData() {
@@ -746,7 +749,8 @@
         if (dados) {
           renderizarDashboard(dados);
           metrics.style.display = 'grid';
-          if (perfil === 'moderador' || (perfil === 'motorista' && dados)) {
+          // ✅ Só moderador vê botão de edição
+          if (perfil === 'moderador') {
             btnEditar.style.display = 'inline-block';
           }
         } else {
@@ -755,9 +759,12 @@
               <div style="font-size:1.2rem; color:var(--gray); margin-bottom:12px;">
                 <i class="fas fa-calendar-plus"></i> Sem registro em ${dataAtiva.split('-').reverse().join('/')}
               </div>
-              <button class="btn" onclick="abrirCadastro('${alvo}', '${dataAtiva}')">
-                <i class="fas fa-plus"></i> Cadastrar Agora
-              </button>
+              ${perfil === 'moderador' ? 
+                `<button class="btn" onclick="abrirCadastro('${alvo}', '${dataAtiva}')">
+                  <i class="fas fa-plus"></i> Cadastrar Agora
+                </button>` : 
+                `<p style="color:var(--gray); margin-top:8px;">Aguarde o moderador inserir seus dados.</p>`
+              }
             </div>
           `;
           metrics.style.display = 'grid';
@@ -799,10 +806,13 @@
               <td>${item.quebras || 0}</td>
               <td>${item.valor_quebras ? formatarMoeda(item.valor_quebras) : 'R$ 0,00'}</td>
               <td>
-                <button class="btn btn-outline" style="padding:5px 10px;font-size:0.8rem;"
-                        onclick="abrirCadastro('${alvo}', '${item.data}')">
-                  <i class="fas fa-edit"></i> Editar
-                </button>
+                ${perfil === 'moderador' ? 
+                  `<button class="btn btn-outline" style="padding:5px 10px;font-size:0.8rem;"
+                          onclick="abrirCadastro('${alvo}', '${item.data}')">
+                     <i class="fas fa-edit"></i> Editar
+                   </button>` : 
+                  `<span style="color:var(--gray);">—</span>`
+                }
               </td>
             </tr>
           `).join('');
@@ -889,7 +899,6 @@
           perfil = 'moderador';
           document.getElementById('loginModal').style.display = 'none';
           document.getElementById('main-content').style.display = 'block';
-          document.getElementById('btn-cadastro').style.display = 'block';
           atualizarBadgePerfil();
           renderizarSelectorMotoristas();
           renderizarSelectorData();
@@ -983,11 +992,6 @@
     });
 
     document.getElementById('btn-editar-dia').addEventListener('click', () => {
-      const alvo = perfil === 'moderador' ? motoristaSelecionado : usuarioLogado;
-      abrirCadastro(alvo, dataAtiva);
-    });
-
-    document.getElementById('btn-cadastro').addEventListener('click', () => {
       const alvo = perfil === 'moderador' ? motoristaSelecionado : usuarioLogado;
       abrirCadastro(alvo, dataAtiva);
     });
