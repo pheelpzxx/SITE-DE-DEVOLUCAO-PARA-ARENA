@@ -535,6 +535,11 @@
     </div>
   </div>
 
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+
   <script>
     // 🔐 Credenciais
     const MODERADOR_USER = 'admin';
@@ -616,17 +621,8 @@
     let DATAS_DISPONIVEIS = gerarJanelaDatas();
     dataAtiva = DATAS_DISPONIVEIS[15].value; // índice 15 = hoje
 
-    // 💾 Persistência
-    function salvarDados() {
-      localStorage.setItem('arena_desempenho_v3_diario', JSON.stringify(dadosDesempenho));
-    }
-
-    function carregarDados() {
-      const salvos = localStorage.getItem('arena_desempenho_v3_diario');
-      return salvos ? JSON.parse(salvos) : {};
-    }
-
-    let dadosDesempenho = carregarDados();
+    // 💾 Persistência (Firebase)
+    let dadosDesempenho = {};
 
     // 🧮 Utilitários
     function formatarMoeda(valor) {
@@ -728,7 +724,7 @@
       `;
     }
 
-    function carregarDashboard() {
+    async function carregarDashboard() {
       const loading = document.getElementById('dashboard-loading');
       const error = document.getElementById('dashboard-error');
       const metrics = document.getElementById('dashboard-metrics');
@@ -778,7 +774,7 @@
       }
     }
 
-    function carregarDiario() {
+    async function carregarDiario() {
       const loading = document.getElementById('diario-loading');
       const error = document.getElementById('diario-error');
       const body = document.getElementById('diario-body');
@@ -878,7 +874,7 @@
       document.getElementById('login-error').style.display = 'none';
     });
 
-    document.getElementById('login-submit').addEventListener('click', () => {
+    document.getElementById('login-submit').addEventListener('click', async () => {
       const user = document.getElementById('login-user').value.trim();
       const pass = document.getElementById('login-pass').value;
       const error = document.getElementById('login-error');
@@ -893,10 +889,22 @@
       loading.style.display = 'block';
       error.style.display = 'none';
 
-      setTimeout(() => {
+      setTimeout(async () => {
         if (user === MODERADOR_USER && pass === MODERADOR_PASS) {
           usuarioLogado = user;
           perfil = 'moderador';
+
+          // 📥 Carrega dados do primeiro motorista (ANANIAS) para inicializar
+          try {
+            dadosDesempenho = {};
+            for (const sigla of SIGLAS_MOTORISTAS) {
+              dadosDesempenho[sigla] = await carregarDesempenho(sigla);
+            }
+          } catch (e) {
+            console.warn("Erro ao carregar dados (continuando com vazio)", e);
+            dadosDesempenho = {};
+          }
+
           document.getElementById('loginModal').style.display = 'none';
           document.getElementById('main-content').style.display = 'block';
           atualizarBadgePerfil();
@@ -911,7 +919,7 @@
       }, 300);
     });
 
-    document.getElementById('motorista-submit').addEventListener('click', () => {
+    document.getElementById('motorista-submit').addEventListener('click', async () => {
       const user = document.getElementById('motorista-user').value.trim().toUpperCase();
       const pass = document.getElementById('motorista-pass').value;
       const error = document.getElementById('login-error');
@@ -925,6 +933,16 @@
       if (SENHAS_MOTORISTAS[user] && SENHAS_MOTORISTAS[user] === pass) {
         usuarioLogado = user;
         perfil = 'motorista';
+
+        // 📥 Carrega só os dados desse motorista
+        try {
+          dadosDesempenho = {};
+          dadosDesempenho[user] = await carregarDesempenho(user);
+        } catch (e) {
+          console.warn("Erro ao carregar dados do motorista", e);
+          dadosDesempenho = { [user]: {} };
+        }
+
         document.getElementById('loginModal').style.display = 'none';
         document.getElementById('main-content').style.display = 'block';
         atualizarBadgePerfil();
@@ -937,7 +955,7 @@
     });
 
     // 📝 Cadastro
-    document.getElementById('cadastro-form').addEventListener('submit', e => {
+    document.getElementById('cadastro-form').addEventListener('submit', async (e) => {
       e.preventDefault();
 
       const motorista = document.getElementById('cadastro-motorista-nome').dataset.motorista;
@@ -960,23 +978,35 @@
         return;
       }
 
-      if (!dadosDesempenho[motorista]) dadosDesempenho[motorista] = {};
-      dadosDesempenho[motorista][data] = {
-        ...campos,
-        data_registro: new Date().toISOString()
-      };
+      // ✅ Salvar no Firestore
+      try {
+        // Carrega o diário atual (pra não sobrescrever outros dias)
+        const diarioAtual = dadosDesempenho[motorista] || {};
+        diarioAtual[data] = {
+          ...campos,
+          data_registro: new Date().toISOString()
+        };
 
-      salvarDados();
+        // Atualiza localmente (pra não bugar a UI)
+        dadosDesempenho[motorista] = diarioAtual;
 
-      document.getElementById('cadastro-success').textContent = '✅ Registro salvo com sucesso!';
-      document.getElementById('cadastro-success').style.display = 'block';
-      document.getElementById('cadastro-error').style.display = 'none';
+        // 📤 Envia pro Firestore
+        await salvarDesempenho(motorista, diarioAtual);
 
-      setTimeout(() => {
-        document.getElementById('cadastroModal').style.display = 'none';
-        carregarDashboard();
-        if (document.getElementById('diario').classList.contains('active')) carregarDiario();
-      }, 1000);
+        document.getElementById('cadastro-success').textContent = '✅ Registro salvo com sucesso!';
+        document.getElementById('cadastro-success').style.display = 'block';
+        document.getElementById('cadastro-error').style.display = 'none';
+
+        setTimeout(() => {
+          document.getElementById('cadastroModal').style.display = 'none';
+          carregarDashboard();
+          if (document.getElementById('diario').classList.contains('active')) carregarDiario();
+        }, 1000);
+
+      } catch (e) {
+        document.getElementById('cadastro-error').textContent = '❌ Erro ao salvar: ' + (e.message || 'tente novamente');
+        document.getElementById('cadastro-error').style.display = 'block';
+      }
     });
 
     // 🔁 Navegação
@@ -1000,6 +1030,49 @@
     window.addEventListener('click', e => {
       if (e.target.classList.contains('modal')) e.target.style.display = 'none';
     });
+
+    // 🔑 Configuração do Firebase (COLE AQUI OS DADOS QUE VOCÊ COPIOU!)
+    const firebaseConfig = {
+      apiKey: "AIzaSyBzXp-XppjNtDTBhDYE4TeaZ_zlXgLTzgQ",
+      authDomain: "arena-desempenho.firebaseapp.com",
+      projectId: "arena-desempenho",
+      storageBucket: "arena-desempenho.appspot.com",
+      messagingSenderId: "934187005406",
+      appId: "1:934187005406:web:ddebc2397f26147cb1994f",
+      measurementId: "G-KQW5079B3G"
+    };
+
+    // 🔌 Inicializa Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+    const auth = firebase.auth();
+
+    // 📥 Carregar desempenho de um motorista (do Firestore)
+    async function carregarDesempenho(motorista) {
+      try {
+        const doc = await db.collection('motoristas').doc(motorista).get();
+        if (doc.exists) {
+          return doc.data().diario || {};
+        }
+        return {};
+      } catch (e) {
+        console.error("Erro ao carregar desempenho:", e);
+        return {};
+      }
+    }
+
+    // 📤 Salvar desempenho de um motorista no Firestore
+    async function salvarDesempenho(motorista, diario) {
+      try {
+        await db.collection('motoristas').doc(motorista).set({
+          diario: diario,
+          atualizado_em: firebase.firestore.FieldValue.serverTimestamp()
+        });
+      } catch (e) {
+        console.error("Erro ao salvar desempenho:", e);
+        throw e;
+      }
+    }
   </script>
 </body>
 </html>
